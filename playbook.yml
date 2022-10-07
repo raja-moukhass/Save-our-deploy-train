@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: true
+  become_method: sudo
+  roles:
+      - check-setup-docker
+      - check-setup-docker-compose
+      - destroy_containers_remove_images
+      - run-compose-with-ansible

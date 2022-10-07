@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+     web:
+       image: nginx:alpine
+       ports:
+           - "80:80"
+       volumes:
+           - ../containers_and_configurations/php/public_html:/public_html
+           - ../containers_and_configurations/nginx/conf.d:/etc/nginx/conf.d
+           - /etc/localtime:/etc/localtime
+       networks:
+           - nginxphp
+
+     php:
+       image: php:7.1.11-fpm-alpine
+       volumes:
+           - ../containers_and_configurations/php/public_html:/public_html
+       expose:
+           - 9000
+       networks:
+           - nginxphp
+
+networks:
+     nginxphp:
