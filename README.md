@@ -1,4 +1,4 @@
-# Save-our-deploy-train
+# Setting Up Nginx Server Blocks
 
 This project is about creating virtual hosts using nginx
 
